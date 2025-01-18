@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-# Teste Econverse: Vaga Desenvolvedor Front-End Jr
+# Teste Econverse: Vaga Desenvolvedor Front-End
 
 ### Vem ser #Econverse!
 
