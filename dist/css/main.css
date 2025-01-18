@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+body {
+  background-color: #3498db;
+}
+
+.top-bar-left-box {
+  font-family: "Poppins", sans-serif;
+  color: aquamarine;
+}
+
+.shield-check {
+  width: 20px;
+  height: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,24 @@
+@import 'header/header.scss';
+@import 'banner/banner.scss';
+@import 'categories/categories.scss';
+@import 'showcaseOne/showcaseOne.scss';
+@import 'shared.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+$GRAY-1: #9F9F9F;
+
+* {
+	box-sizing:border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+  background-color: white;
+}
+
+.App {
+	justify-items: center;
+	font-family: 'Poppins', sans-serif;
+	color: $GRAY-1;
+}
+
