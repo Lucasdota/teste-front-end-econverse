@@ -4,6 +4,9 @@
 
 Este projeto foi criado como parte do desafio de desenvolvedor front-end da Econverse. Ele usa React, Typescript, Sass e ferramentas modernas como `react-scripts` e `jest` para teste.
 
+## Website
+Você pode verificar o projeto no ar clicando neste [link](https://teste-front-end-econverse-eta.vercel.app/).
+
 ## Requisitos
 
 Antes de começar, verifique se você tem os seguintes programas instalados:
