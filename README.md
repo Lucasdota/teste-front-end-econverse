@@ -1,4 +1,6 @@
-# Desafio Econverse
+<h1 align="center"> 
+	Desafio Econverse
+</h1>
 
 Este projeto foi criado como parte do desafio de desenvolvedor front-end da Econverse. Ele usa React, Typescript, Sass e ferramentas modernas como `react-scripts` e `jest` para teste.
 
