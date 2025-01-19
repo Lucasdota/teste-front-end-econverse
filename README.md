@@ -61,13 +61,13 @@ npm run sass
 ### Estrutura do projeto
 ```bash
 /teste-front-end-econverse
-├── /public         	 # Arquivos estáticos, como o index.html, imagens e ícones
-├── /src				 # Código fonte
-	├── /components      # Componentes da aplicação
-	├── /scss			 # Arquivos SASS/SCSS
-	├── App.jsx          # Componente principal da aplicação
-	├── App.test.js      # Arquivo de testes
-	├── index.js         # Ponto de entrada do React
-├── package.json         # Arquivo de configuração do projeto
-├── README.md   		 # Este arquivo
+├── /public          # Arquivos estáticos, como o index.html, imagens e ícones
+├── /src             # Código fonte
+	├── /components  # Componentes da aplicação
+	├── /scss        # Arquivos SASS/SCSS
+	├── App.jsx      # Componente principal da aplicação
+	├── App.test.js  # Arquivo de testes
+	├── index.js     # Ponto de entrada do React
+├── package.json     # Arquivo de configuração do projeto
+├── README.md        # Este arquivo
 ```
