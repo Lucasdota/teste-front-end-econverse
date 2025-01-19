@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Modal from "../Modal.tsx";
 
 export default function Products() {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
-  const [startIndex, setStartIndex] = useState(0);
+  const [translateX, setTranslateX] = useState(0);
+  const slider = useRef();
   const productsObj = {
     success: true,
     products: [
@@ -81,95 +82,103 @@ export default function Products() {
     ],
   };
 
-  	const formatPrice = (price) => {
-		return new Intl.NumberFormat("pt-BR", {
-		style: "currency",
-		currency: "BRL",
-		}).format(price);
+  const formatPrice = (price) => {
+    return new Intl.NumberFormat("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    }).format(price);
+  };
+
+  const handleBuyClick = (product) => {
+    setSelectedProduct(product);
+    setIsPopupVisible(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupVisible(false);
+    setSelectedProduct(null);
+  };
+
+  	const handleNextRight = () => {
+		if (translateX > -1932) {
+			setTranslateX((prev) => prev - 322);
+		}
   	};
 
-	 const handleBuyClick = (product) => {
-     setSelectedProduct(product);
-     setIsPopupVisible(true);
-   };
+  	const handleNextLeft = () => {
+		if (translateX < 0) {
+			setTranslateX((prev) => prev + 322);
+		}
+  	};
 
-   const closePopup = () => {
-     setIsPopupVisible(false);
-     setSelectedProduct(null);
-   };
-
-   let visibleProducts = productsObj.products.slice(
-     startIndex,
-     startIndex + 4
-   );
-
-   const handleNextRight = () => {
-     if (startIndex + 4 < productsObj.products.length) {
-       setStartIndex((prev) => prev + 1);
-     }
-   };
-
-   const handleNextLeft = () => {
-     if (startIndex > 0) {
-       setStartIndex((prev) => prev - 1);
-     }
-   };
-
-    useEffect(() => {
-      if (isPopupVisible) {
-        document.body.style.overflow = "hidden";
-		document.body.style.position = "relative";
-		document.body.style.right = "8px";
-		document.documentElement.style.overflow = "hidden";
-		document.documentElement.style.position = "relative";
-      } else {
-        document.body.style.overflow = "auto";
-		document.body.style.right = "0px";
-		document.documentElement.style.overflow = "auto";
-      }
-      return () => {
-        document.body.style.overflow = "auto";
-		document.body.style.right = "0px";
-		document.documentElement.style.overflow = "auto";
-      };
-    }, [isPopupVisible]);
+  useEffect(() => {
+    if (isPopupVisible) {
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "relative";
+      document.body.style.right = "8px";
+      document.documentElement.style.overflow = "hidden";
+      document.documentElement.style.position = "relative";
+    } else {
+      document.body.style.overflow = "auto";
+      document.body.style.right = "0px";
+      document.documentElement.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+      document.body.style.right = "0px";
+      document.documentElement.style.overflow = "auto";
+    };
+  }, [isPopupVisible]);
 
   return (
     <>
       <div className="chevrons-container">
         <button
+          disabled={translateX >= 0}
           onClick={handleNextLeft}
-          disabled={startIndex === 0}
           className="chevrons"
         >
           <img src="/ChevronLeft.png" alt="chevron left" />
         </button>
-        <button onClick={handleNextRight} 
-		disabled={startIndex + 4 >= productsObj.products.length}
-		 className="chevrons">
+        <button
+          disabled={translateX <= -1932}
+          onClick={handleNextRight}
+          className="chevrons"
+        >
           <img src="/ChevronRight.png" alt="chevron right" />
         </button>
       </div>
-      <ul className="showcase-products-container">
-        {visibleProducts.map((product, index) => (
-          <li key={index}>
-            <img src={product.photo} alt={product.productName} />
-            <p className="product-description">{product.descriptionShort}</p>
-            <p className="old-price">{`${formatPrice(product.price + 200)}`}</p>
-            <p className="price">{`${formatPrice(product.price)}`}</p>
-            <p className="price-interest">{`ou 5x de ${formatPrice(
-              (product.price * 1.15) / 5
-            )} sem juros`}</p>
-            <p className="free-delivery">Frete grátis</p>
-            <button
-              className="buy-button"
-              onClick={() => handleBuyClick(product)}
-            >
-              <p>Comprar</p>
-            </button>
-          </li>
-        ))}
-      </ul>
+      <div className="slider-container">
+        <ul
+          ref={slider}
+          style={{
+            transform: `translateX(${translateX}px)`,
+            transition: "transform 0.5s ease-out",
+          }}
+          className="showcase-products-container"
+        >
+          {productsObj.products.map((product, index) => (
+            <li key={index}>
+              <img src={product.photo} alt={product.productName} />
+              <p className="product-description">{product.descriptionShort}</p>
+              <p className="old-price">{`${formatPrice(
+                product.price + 200
+              )}`}</p>
+              <p className="price">{`${formatPrice(product.price)}`}</p>
+              <p className="price-interest">{`ou 5x de ${formatPrice(
+                (product.price * 1.15) / 5
+              )} sem juros`}</p>
+              <p className="free-delivery">Frete grátis</p>
+              <button
+                className="buy-button"
+                onClick={() => handleBuyClick(product)}
+              >
+                <p>Comprar</p>
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
 
       {isPopupVisible && selectedProduct && (
         <Modal
@@ -181,5 +190,3 @@ export default function Products() {
     </>
   );
 }
-
-

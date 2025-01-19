@@ -34,15 +34,83 @@
 
 .showcase-container {
 	width: 1364px;
-	height: 500px;
+	height: 520px;
 	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-top: 24px;
-	padding-left: 18px;
-	padding-right: 18px;
+	margin-top: 12px;
 }
+
+.slider-container {
+	overflow: hidden;
+	.showcase-products-container {
+		width: 1292px;
+		height: 520px;
+		display: flex;
+		align-items: center;
+		list-style-type: none;
+		gap: 18px;
+		padding-left: 11px;
+		padding-right: 11px;
+		li {
+			width: 304px;
+			min-width: 304px;
+			height: 500px;
+			border-radius: 10px;
+			box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.22);
+			display: grid;
+			grid-template-rows: 1fr 1fr auto auto auto 1fr;
+			padding: 12px;
+			padding-top: 36px;
+			.product-description {
+				font-size: 15px;
+				font-weight: 300;
+				color: #3F3F40;
+				align-self: end;
+			}
+			.old-price {
+				font-size: 16px;
+				color: #808080;
+				text-decoration: line-through;
+				margin-top: 12px;
+			}
+			.price {
+				font-size: 20px;
+				font-weight: 700;
+				color: #3F3F40;
+			}
+			.price-interest {
+				font-size: 12px;
+				color: #3F3F40;
+			}
+			.free-delivery {
+				font-size: 12px;
+				color: #3442B5;
+				margin-top: 12px;
+			}
+			.buy-button {
+				width: 100%;
+				height: 44px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: #3442B5;
+				border-radius: 4px;
+				cursor: pointer;
+				border: none;
+				p {
+					text-transform: uppercase;
+					color: white;
+					font-size: 14px;
+					font-weight: 700;
+				}
+			}
+		}
+	}
+}
+
+
 
 .chevrons-container {
 	width: 1370px;
@@ -75,68 +143,3 @@
 		}
 	}
 }
-
-.showcase-products-container {
-	width: 1270px;
-	height: 550px;
-	display: flex;
-	align-items: center;
-	scroll-behavior: smooth;
-	list-style-type: none;
-	gap: 18px;	
-	li {
-		width: 304px;
-		height: 500px;
-		border-radius: 10px;
-		box-shadow: 0px 3px 19px 0px rgba(0, 0, 0, 0.22);
-		display: grid;
-		grid-template-rows: 1fr 1fr auto auto auto 1fr;
-		padding: 12px;
-		padding-top: 36px;
-		transition: transform 0.3s ease-in-out;
-		.product-description {
-			font-size: 15px;
-			font-weight: 300;
-			color: #3F3F40;
-			align-self: end;
-		}
-		.old-price {
-			font-size: 16px;
-			color: #808080;
-			text-decoration: line-through;
-			margin-top: 12px;
-		}
-		.price {
-			font-size: 20px;
-			font-weight: 700;
-			color: #3F3F40;
-		}
-		.price-interest {
-			font-size: 12px;
-			color: #3F3F40;
-		}
-		.free-delivery {
-			font-size: 12px;
-			color: #3442B5;
-			margin-top: 12px;
-		}
-		.buy-button {
-			width: 100%;
-			height: 44px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: #3442B5;
-			border-radius: 4px;
-			cursor: pointer;
-			border: none;
-			p {
-				text-transform: uppercase;
-				color: white;
-				font-size: 14px;
-				font-weight: 700;
-			}
-		}
-	}
-}
-
