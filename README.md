@@ -23,7 +23,7 @@ npm -v
 
 ## Instalação
 
-### Clone the Repository
+### Clone o repositório
 
 ```bash
 git clone https://github.com/Lucasdota/teste-front-end-econverse.git
