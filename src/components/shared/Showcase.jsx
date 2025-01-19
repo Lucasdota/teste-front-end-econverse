@@ -2,8 +2,6 @@ import React from 'react'
 import Products from './showcase/Products.tsx';
 
 export default function Showcase() {
-	
-
 	const productsObj = {
     success: true,
     products: [

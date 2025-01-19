@@ -1,6 +1,6 @@
-import React from 'react'
-import Title from '../shared/Title'
-import Showcase from '../shared/Showcase'
+import React from 'react';
+import Title from '../shared/Title.jsx';
+import Showcase from '../shared/Showcase.jsx';
 
 export default function ShowcaseTwo() {
   return (

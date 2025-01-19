@@ -7,7 +7,6 @@ import Partners from "./components/shared/Partners";
 import ShowcaseOne from "./components/showcaseOne/ShowcaseOne";
 import ShowcaseTwo from "./components/showcaseTwo/ShowcaseTwo";
 
-
 function App() {
   return (
     <main className="App">
