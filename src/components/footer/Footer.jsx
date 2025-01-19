@@ -5,10 +5,10 @@ import BottomBar from './BottomBar'
 
 export default function Footer() {
   return (
-	<section className='footer-container'>
+	<footer className='footer-container'>
 		<NewsLetter />
 		<Information />
 		<BottomBar />
-	</section>
+	</footer>
   )
 }

@@ -7,7 +7,7 @@ export default function Title() {
         Ver todos
       </p>
       <hr />
-      <h3>Produtos Relacionados</h3>
+      <h3 id="showcase-title">Produtos Relacionados</h3>
       <hr />
     </div>
   );

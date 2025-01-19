@@ -1,12 +1,16 @@
 .showcaseOne-tags-container {
 	width: 1280px;
 	height: 40px;
-	list-style-type: none;
-	display: flex;
-	align-items: center;
-	border-left: 2px solid #DEDEDE;
-	h4 {
+	ul {
+		list-style-type: none;
+		display: flex;
+		align-items: center;
+		border-left: 2px solid #DEDEDE;
+	}
+	a {
 		font-weight: 400;
+		text-decoration: none;
+		color:#3B3B3B;
 	}
 	li {
 		cursor: pointer;

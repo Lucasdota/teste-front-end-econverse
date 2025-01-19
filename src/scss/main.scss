@@ -25,3 +25,18 @@ body {
 	color: $GRAY-1;
 }
 
+::selection {
+  background-color: #ffcc00;
+  color: #000000;
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: #ffcc00;
+  color: #000000;
+}
+
+.skip-link {
+	display: none;
+}
+

@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function Modal({ product, formatPrice, closePopup }: Props) {
-	const [quantity, setQuantity] = useState(1);
+	const [quantity, setQuantity] = useState<number>(1);
 
 	const increaseQuantity = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
@@ -27,10 +27,17 @@ export default function Modal({ product, formatPrice, closePopup }: Props) {
   };
 
   return (
-    <div className="popup-overlay">
+    <div
+      role="dialog"
+      aria-labelledby={product.productName}
+      aria-describedby={product.productName}
+      className="popup-overlay"
+      aria-modal="true"
+      tabIndex={-1}
+    >
       <div className="popup-container">
         <div className="img-container">
-          <img src={product.photo} alt={product.productName} />
+          <img src={product.photo} loading="lazy" alt={product.productName} />
         </div>
         <div className="popup-description">
           <h2>{product.productName}</h2>
@@ -42,11 +49,11 @@ export default function Modal({ product, formatPrice, closePopup }: Props) {
           <p className="details">Veja mais detalhes do produto &gt;</p>
           <div className="comprar-button-row">
             <div className="quantity-menu-container">
-              <button onClick={decreaseQuantity}>
+              <button onClick={decreaseQuantity} aria-label="Decrease quantity">
                 <img src="/Minus.png" alt="decrease quantity" />
               </button>
               <span>{formatQuantity(quantity)}</span>
-              <button onClick={increaseQuantity}>
+              <button onClick={increaseQuantity} aria-label="Increase quantity">
                 <img src="/Plus.png" alt="increase quantity" />
               </button>
             </div>
@@ -54,7 +61,11 @@ export default function Modal({ product, formatPrice, closePopup }: Props) {
             <button className="comprar-button">Comprar</button>
           </div>
         </div>
-        <button className="close-button-container" onClick={closePopup}>
+        <button
+          className="close-button-container"
+          aria-label="Close popup"
+          onClick={closePopup}
+        >
           <div className="close-button">
             <img src="/LineRight.png" alt="close right line" />
             <img src="/LineLeft.png" alt="close left line" />

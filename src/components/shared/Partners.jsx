@@ -11,7 +11,7 @@ export default function Partners() {
             <span>Confira</span>
           </div>
         </div>
-        <img src="/Partners.png" alt="devices store" />
+        <img src="/Partners.png" loading="lazy" alt="devices store" />
       </div>
 
       <div className="partners">
@@ -22,7 +22,7 @@ export default function Partners() {
             <span>Confira</span>
           </div>
         </div>
-        <img src="/Partners.png" alt="devices store" />
+        <img src="/Partners.png" loading="lazy" alt="devices store" />
       </div>
     </section>
   );
