@@ -1,9 +1,11 @@
 @import 'header/header.scss';
 @import 'banner/banner.scss';
 @import 'categories/categories.scss';
-@import 'showcaseOne/showcaseOne.scss';
 @import 'shared.scss';
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import 'partners/partners.scss';
+@import 'brands/brands.scss';
+@import 'footer/footer.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 $GRAY-1: #9F9F9F;
 
 * {
@@ -14,6 +16,7 @@ $GRAY-1: #9F9F9F;
 
 body {
   background-color: white;
+  position:sticky;
 }
 
 .App {
